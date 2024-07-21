@@ -1,0 +1,2 @@
+php artisan make:factory UserFactory --model=User
+php artisan db:seed --class=DatabaseSeeder
