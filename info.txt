@@ -1,0 +1,6 @@
+API Details:
+1. http://localhost:8000/api/borrow-request (book_id, user_id are the parameters to be passed) - Post Request
+2. http://localhost:8000/api/return-request (book_id, user_id are the parameters to be passed) - Post Request
+3. http://localhost:8000/api/history - Get Request (No Parameter)
+
+In the root directory, library.sql file is given. Please install the db in your local.
