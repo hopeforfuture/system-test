@@ -18,8 +18,11 @@ class BookFactory extends Factory
     {
         return [
             'book_name'        => $this->faker->realText(20, 2),
-            'book_description' => $this->faker->realText(200, 2),
+            //'book_description' => $this->faker->realText(200, 2),
             'author_name'      => fake()->name(),
+            'genre'            => 'technical',
+            'isbn'             => 'isbn_'.rand(1000, 10000),
+            'published_date'   => date('Y-m-d H:i:s'),
         ];
     }
 }

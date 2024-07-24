@@ -28,8 +28,23 @@ class BorrowingController extends Controller
         $validated = $validator->validated();
 
         $bookInfo = Book::find($validated['book_id']);
+        if(empty($bookInfo)) {
+            return response()->json([
+                'status' => 'fail',
+                'msg'    => 'Book is no more available'
+             ], 
+             200);
+        }
         $bookInfoArr = $bookInfo->toArray();
-        $userInfoArr = User::find($validated['user_id'])->toArray();
+        $userInfo    = User::find($validated['user_id']);
+        if(empty($userInfo)) {
+            return response()->json([
+                'status' => 'fail',
+                'msg'    => 'User is not available'
+             ], 
+             200);
+        }
+        $userInfoArr = $userInfo->toArray();
         
 
         if($bookInfoArr['is_available'] == 0) {
