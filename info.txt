@@ -1,6 +1,21 @@
 API Details:
+Entity : Borrowing
 1. http://localhost:8000/api/borrow-request (book_id, user_id are the parameters to be passed) - Post Request
 2. http://localhost:8000/api/return-request (book_id, user_id are the parameters to be passed) - Post Request
 3. http://localhost:8000/api/history - Get Request (No Parameter)
+
+Entity : Book
+1. http://localhost:8000/api/book/create (title, author, genre, isbn, published_date) - Post Request
+2. http://localhost:8000/api/book/list - Get Request
+3. http://localhost:8000/api/book/view (key(id or isbn)) - Post Request
+4. http://localhost:8000/api/book/delete (key(id or isbn)) - Post Request
+5. http://localhost:8000/api/book/update (id(mandatory), title(optional), author(optional), genre(optional), isbn(optional), published_date(optional)) - Post Request
+
+Entity : User
+1. http://localhost:8000/api/user/create (name, email, password, role(Admin/Member)) - Post Request
+2. http://localhost:8000/api/user/list - Get Request
+3. http://localhost:8000/api/user/update (id(mandatory), name(optional), email(optional), password(optional), role(optional)) - Post Request
+4. http://localhost:8000/api/user/delete (id(mandatory)) - Post Request
+5. http://localhost:8000/api/user/view (key(id or email)) - Post Request
 
 In the root directory, library.sql file is given. Please install the db in your local.
